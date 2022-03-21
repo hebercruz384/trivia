@@ -8,17 +8,32 @@ function App() {
   return (
     <div className="app">
       Triviaaa!!
-      <Question text={data[number].question.text} />
+      <Question
+        text={data[number].question.text}
+        Choices={data[number].question.choices}
+      />
       <NextQuestion />
     </div>
   );
 }
 function Question(props) {
   console.log(props);
-  return <div>{props.text}</div>;
+  return (
+    <div>
+      {props.text}
+      <Answer answers={props.Choices} />
+    </div>
+  );
 }
 function NextQuestion() {
   return <button type="button">Next Question</button>;
+}
+function Answer(props) {
+  let answerParagraphs = props.answers.map(displayParagraphs);
+  function displayParagraphs(element) {
+    return <p>{element}</p>;
+  }
+  return <div>{answerParagraphs}</div>;
 }
 export default App;
 //----
