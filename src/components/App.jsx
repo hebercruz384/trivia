@@ -18,9 +18,8 @@ function App() {
     </div>
   );
 }
-function DisplayAnswer(props){
+function DisplayAnswer() {
   return <button type="button">Correct Answer</button>;
-  <div> </div>
 }
 function Question(props) {
   console.log(props);
