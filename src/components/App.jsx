@@ -4,6 +4,7 @@ import data from "../sample_data.json";
 
 function App() {
   console.log(data);
+  let [answerDisplayed, setAnswerDisplayed] = useState();
   let number = 0;
   return (
     <div className="app">
@@ -13,8 +14,13 @@ function App() {
         Choices={data[number].question.choices}
       />
       <NextQuestion />
+      <DisplayAnswer />
     </div>
   );
+}
+function DisplayAnswer(props){
+  return <button type="button">Correct Answer</button>;
+  <div> </div>
 }
 function Question(props) {
   console.log(props);
